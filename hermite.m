@@ -11,16 +11,17 @@ function [ u v ] = hermite( nodes, xtab )
     
     for j = 1:length(nodes)      
         l = lagrange(nodes, j, xtab);
-        lagr_d = length(nodes)/(length(nodes)*nodes(j)-sum(nodes));
-        %lagr_square(j,:) = l.*l;
-        u(j) = (1-2*lagr_d(j).*(xtab - nodes(j))).*l.*l;
+        nodes_minus_j = nodes;
+        nodes_minus_j(j) = [];
+        lagr_d = sum( 1./(nodes(j)-nodes_minus_j) );
+        
+        lagr_square = l.*l;
+        
+        u(j,:) = (1-2*lagr_d*(xtab - nodes(j))).*lagr_square;
+        v(j,:) = (xtab-nodes(j)).*lagr_square;
+
     end
 
-    %tot = xtab(ones(1,length(nodes)),:);
-    %nodes=nodes';
-    %tot = tot - nodes(:,ones(length(xtab),1));
-    
-    %u = (1-2*lagr_d.*(tot)).*lagr_square;
 
     
         
