@@ -9,7 +9,8 @@ function [ u v ] = hermite( nodes, xtab )
     lagr_square = zeros(1,length(xtab));
     
     
-    for j = 1:length(nodes)      
+    for j = 1:length(nodes)
+        
         l = lagrange(nodes, j, xtab);
         nodes_minus_j = nodes;
         nodes_minus_j(j) = [];
