@@ -2,7 +2,7 @@
 
 a = -1;
 b = 1;
-n_nodes=10;
+n_nodes=3;
 nodes=a:(b-a)/n_nodes:b;
 
 
@@ -45,7 +45,8 @@ for j = 1:length(nodes)
     plot(xtab, v_tab(j,:), '--', 'color',  cc(j,:));
     %pause;
 end
-
+plot(nodes, u_d, '*');
+plot(nodes, v_d, '+');
 legend(p, l,'Location','BestOutside');  
 hold off;
 
@@ -54,7 +55,7 @@ hold off;
 % interpolation on chebyshev nodes
 
 % n + 1 = 11
-n = 10;
+n = 3;
 nodes = chebyshev_gen(-1,1,n);
 % tabulation numbers
 % row column

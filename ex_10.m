@@ -2,7 +2,7 @@ a = -1;
 b = 1;
 n_nodes=10;
 
-%nodes=-1:(b-a)/n_nodi:1;
+% nodes=a:(b-a)/n_nodes:b;
 nodes=chebyshev_gen(a,b,n_nodes);
 
 % tabulation numbers
