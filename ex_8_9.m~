@@ -1,20 +1,15 @@
 % interpolation nodes
 
-a = -1;
-b = 1;
-n_nodes=10;
-nodes=a:(b-a)/n_nodes:b;
+% n + 1 = 11
+nodes = 0:10:100;
 
-
-nodes
 % tabulation numbers
 % row column
-xtab = min(nodes):0.01:max(nodes);
+xtab = nodes(1):0.01:nodes(length(nodes));
 
 
 % get hermite u and v
 [u_tab, v_tab, u_nodes, v_nodes, u_d, v_d] = hermite(nodes,xtab);
-
 size(u_tab)
 size(v_tab)
 disp('propriet:')
@@ -55,7 +50,7 @@ hold off;
 
 % n + 1 = 11
 n = 10;
-nodes = chebyshev_gen(-1,1,n);
+nodes = chebyshev_gen(0,100,n);
 % tabulation numbers
 % row column
 xtab = min(nodes):0.01:max(nodes);
