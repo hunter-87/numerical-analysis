@@ -1,4 +1,4 @@
-function [ u_tab,v_tab,u_nodes, v_nodes, u_d, v_d ] = hermite( nodes, xtab )
+function [ u_tab,v_tab,u_nodes, v_nodes, u_d, v_d ] = get_hermite_basis( nodes, xtab )
 %HERMITE Summary of this function goes here
 %   Detailed explanation goes here
     
@@ -15,8 +15,8 @@ function [ u_tab,v_tab,u_nodes, v_nodes, u_d, v_d ] = hermite( nodes, xtab )
     
     for j = 1:length(nodes)
         
-        l_tab = lagrange(nodes,j,xtab);
-        l_nodes = lagrange(nodes,j,nodes);
+        l_tab = get_lagrange_basis(nodes,j,xtab);
+        l_nodes = get_lagrange_basis(nodes,j,nodes);
     
         % lagrange derivate in x_j
         nodes_minus_j = nodes;

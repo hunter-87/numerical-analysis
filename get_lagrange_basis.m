@@ -1,4 +1,4 @@
-function [ l_base ] = lagrange( nodes, j, xtab)
+function [ l_base ] = get_lagrange_basis( nodes, j, xtab)
 %LAGRANGE 
 %   from a nodes vector of x+1 and an integer j create the lagrangian base
 %   lj(x)
