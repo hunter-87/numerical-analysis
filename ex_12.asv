@@ -8,7 +8,7 @@ for n_nodes = 4:10
     f = 1./(1+25*nodes.*nodes);
     f1_xtab = 1./(1+25*xtab.*xtab);
     
-    pol = interpolation_bernstein(nodes, xtab, f);
+    pol = berstein_interpolation(nodes, xtab, f);
 
     figure;
     hold on;

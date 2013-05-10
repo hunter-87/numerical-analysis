@@ -1,19 +1,16 @@
 % interpolation nodes
-
 a = -1;
 b = 1;
 n_nodes=3;
-nodes=a:(b-a)/n_nodes:b;
 
-
-nodes
+% interpolation nodes
+nodes = gen_uniform_nodes(a,b,n_nodes);
 % tabulation numbers
-% row column
 xtab = min(nodes):0.01:max(nodes);
 
 
 % get hermite u and v
-[u_tab, v_tab, u_nodes, v_nodes, u_d, v_d] = hermite(nodes,xtab);
+[u_tab, v_tab, u_nodes, v_nodes, u_d, v_d] = get_hermite_basis(nodes,xtab);
 
 size(u_tab)
 size(v_tab)
@@ -54,16 +51,14 @@ hold off;
 
 % interpolation on chebyshev nodes
 
-% n + 1 = 11
-n = 3;
-nodes = chebyshev_gen(-1,1,n);
+n_nodes = 3;
+nodes = gen_chebyshev_nodes(a,b,n_nodes);
 % tabulation numbers
-% row column
 xtab = min(nodes):0.01:max(nodes);
 
 
 % get hermite u and v
-[u_tab, v_tab, u_nodes, v_nodes, u_d, v_d] = hermite(nodes,xtab);
+[u_tab, v_tab, u_nodes, v_nodes, u_d, v_d] = get_hermite_basis(nodes,xtab);
 
 
 %%%%%%%%%%% plot on the same figure

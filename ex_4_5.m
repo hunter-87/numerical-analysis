@@ -1,13 +1,16 @@
 % Question 4 and 5
 
+a = -1;
+b = 1;
+
 % tabulation numbers
-xtab = -1:0.01:1;
+xtab = a:0.01:b;
 
 for n = 3:10
     
     % n+1 nodes in [-1,1]
-    nodes = -1:(2/n):1;
-    nodes_c =  chebyshev_gen(-1,1,n);
+    nodes = gen_uniform_nodes(a,b,n+1);
+    nodes_c =  gen_chebyshev_nodes(a,b,n+1);
     
     
     f1 = 1./(1+25*nodes.*nodes);
@@ -20,8 +23,8 @@ for n = 3:10
     f2_xtab = sin(2*pi*xtab);
     
     % f1 lagrange interpolation
-    pn1 = lagrange_interpolation(nodes, xtab, f1);
-    pn1_c = lagrange_interpolation(nodes_c, xtab, f1_c);
+    pn1 = interpolation_lagrange(nodes, xtab, f1);
+    pn1_c = interpolation_lagrange(nodes_c, xtab, f1_c);
     
     figure;
     plot(xtab, pn1);
@@ -35,8 +38,8 @@ for n = 3:10
 
     
     % f2 lagrange interpolation
-    pn2 = lagrange_interpolation(nodes, xtab, f2);
-    pn2_c = lagrange_interpolation(nodes_c, xtab, f2_c);
+    pn2 = interpolation_lagrange(nodes, xtab, f2);
+    pn2_c = interpolation_lagrange(nodes_c, xtab, f2_c);
     
     figure;
     plot(xtab, pn2);

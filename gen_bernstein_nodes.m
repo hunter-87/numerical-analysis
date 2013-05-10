@@ -1,4 +1,4 @@
-function [ nodes, xtab ] = gen_berstein_nodes( a, b, n )
+function [ nodes, xtab ] = gen_bernstein_nodes( a, b, n )
 %GEN_BERSTEIN_NODES Summary of this function goes here
 %   Detailed explanation goes here
 
