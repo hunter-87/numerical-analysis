@@ -1,3 +1,10 @@
+function [ x_min, val_min ] = solve_linear_system_least_squares_general( A, b )
+%SOLVE_LINEAR_SYSTEM_LEAST_SQUARES_GENERAL Summary of this function goes here
+%   Detailed explanation goes here
+
+
+end
+
 function [ x_min, val_min ] = solve_linear_system_least_squares( A, b )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here

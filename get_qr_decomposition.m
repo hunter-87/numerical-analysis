@@ -18,7 +18,6 @@ function [ Q, R ] = get_qr_decomposition( A )
         e = I(:,i);
         % get the new value of the i-element
         v = a + sign(a(i)) * norm(a) * e;
-
         % get hauseholder of the vector a modified at the i-element
         H = get_hauseholder_matrix(v);
 

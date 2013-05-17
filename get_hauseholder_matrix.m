@@ -4,7 +4,7 @@ function [ H ] = get_hauseholder_matrix( x )
 
     a = 2/(x'*x);
     
-    H = eye(length(x)) - a*x*x';
+    H = eye(length(x)) - a*(x*x');
 
 end
 
