@@ -1,12 +1,13 @@
 
-%a n*p
+%
 A = [1 2 3; 0 1 2; 0 4 1];
+[n, m] = size(A);
 
 % Q e U fattorizzazione QU
-Q = eye(size(A,1));
-I = eye(size(A,1));
+Q = eye(n);
+I = eye(n);
 
-for i = 1:size(A,2)
+for i = 1:m
     
     % get the column to build Hauseholder
     a = A(:,i);
@@ -21,16 +22,18 @@ for i = 1:size(A,2)
     H = get_hauseholder_matrix(v);
     
     % set the new A
+    A = H * A;
     
+    % update Q
+    Q = H * Q;
     
-    
-    e = I(:,i);
-    
-    Q = Q* get_hauseholder_matrix(A(:,j) );
 end
 
-Q
-R=Q'*A
+Q=Q'
+R=A
+norm(A - Q*R)
+A - Q*R
 
-
-[C, D] = qr(A);
+[QM, D] = qr(A)
+norm(Q - QM)
+norm(R - D)
