@@ -18,20 +18,19 @@ for i = 1:size(A,2)
     v = a + sign(a(i)) * norm(a) * e;
     
     % get hauseholder of the vector a modified at the i-element
-    H = get_hauseholder_matrix(v)
+    H = get_hauseholder_matrix(v);
     
     % set the new A
-    A = H * A;
     
-    % update Q
-    Q = H * Q;
     
+    
+    e = I(:,i);
+    
+    Q = Q* get_hauseholder_matrix(A(:,j) );
 end
 
 Q
 R=Q'*A
-norm(A - Q*R)
 
-[C, D] = qr(A)
-norm(Q - C)
-norm(R - D)
+
+[C, D] = qr(A);

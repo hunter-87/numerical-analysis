@@ -1,7 +1,5 @@
-x = [1; 2; 3; 4];
+u = [1; 2; 3; 4];
+x = [5; 6; 7; 8]
 
-H = get_hauseholder_matrix(x);
-
-H*x
-
+t = get_hauseholder_transformation(u, x)
 
