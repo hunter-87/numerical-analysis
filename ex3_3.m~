@@ -1,0 +1,10 @@
+
+
+figure;
+
+for n = 2:20
+    x_nodes = 0:n;
+    omega = get_quadrature_interpolation_weight(x_nodes);
+    
+
+end
