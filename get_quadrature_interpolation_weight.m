@@ -9,7 +9,7 @@ function [ omega ] = get_quadrature_interpolation_weight( nodes )
 
     for j = 1:length(nodes)
         ytab = get_lagrange_basis(nodes, j, xtab);
-        omega(j) = trapz(ytab);
+        omega(j) = trapz(xtab, ytab);
     end
     
 end
