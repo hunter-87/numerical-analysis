@@ -1,0 +1,20 @@
+a = 0;
+b = 2*pi;
+n = 4;
+
+
+% tolerance 
+tol = 0.01;
+
+% x between 0 and 2*pi
+nodes = a:0.01:b;
+
+f = @(x) function_17(x);   %x.*x;
+
+plot(nodes,f(nodes));
+
+integral = get_quadrature_adaptive(a,b,n,tol,f)
+real_integral = integral(@(x)  x.*x(i) - (pi+1)/4 ,0,2*pi)
+
+
+

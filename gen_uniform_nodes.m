@@ -3,6 +3,8 @@ function [ nodes ] = gen_uniform_nodes( a, b, n )
 %   Detailed explanation goes here
     
     if a>b
+        a
+        b
         error('a must be less than b!');
     end
     

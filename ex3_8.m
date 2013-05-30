@@ -19,20 +19,21 @@ for n = 2:10
     nodes_sin = gen_uniform_nodes(0,2*pi,n+1);
     omega_sin = get_quadrature_interpolation_weight(nodes_sin)
     interp_sin(n-1) = omega_sin*sin(nodes_sin)';
-    interp_sin_pert(n-1) = omega_sin*sin(nodes_sin)' + rand(1);
+    interp_sin_pert(n-1) = omega_sin*sin(nodes_sin)' + (-1+2*rand(1))*10^(-6);
 
     
     % e^x
     nodes_exp = gen_uniform_nodes(-4,4,n+1);
     omega_exp = get_quadrature_interpolation_weight(nodes_exp);
     interp_exp(n-1) = omega_exp*exp(nodes_exp)';
-    interp_exp_pert(n-1) = omega_exp*exp(nodes_exp)'+ rand(1);
+    interp_exp_pert(n-1) = omega_exp*exp(nodes_exp)'+ (-1+2*rand(1));
     
     % 1/(1+x^2)
     nodes_datan = gen_uniform_nodes(-5,5,n+1);
     omega_datan = get_quadrature_interpolation_weight(nodes_datan);
     interp_datan(n-1) = omega_datan*(1./(1+nodes_datan.*nodes_datan))';    
-    interp_datan_pert(n-1) = omega_datan*(1./(1+nodes_datan.*nodes_datan))'+ rand(1);
+    interp_datan_pert(n-1) = omega_datan*(1./(1+nodes_datan.*nodes_datan))' ... 
+                + (-1+2*rand(1));
 
 end
 

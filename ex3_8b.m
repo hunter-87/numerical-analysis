@@ -14,7 +14,7 @@ end
 
 figure;
 hold on;
-plot(1:4,realIntegral);
-plot(1:4,new_coates, 'r');
-plot(abs(realIntegral - new_coates),'g');
+plot(1:4,realIntegral,'*');
+plot(1:4,new_coates, 'r*');
+plot(abs(realIntegral - new_coates),'g*');
 xlabel('nodes');
