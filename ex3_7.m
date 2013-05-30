@@ -13,7 +13,7 @@ for n = 2:10
 
     % sin(x)
     nodes_sin = gen_uniform_nodes(0,2*pi,n+1);
-    omega_sin = get_quadrature_interpolation_weight(nodes_sin)
+    omega_sin = get_quadrature_interpolation_weight(nodes_sin);
     interp_sin(n-1) = omega_sin*sin(nodes_sin)';
     
     

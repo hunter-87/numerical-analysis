@@ -9,7 +9,7 @@ for n = 2:2:10
     nodes = gen_uniform_nodes(a, b, n+1);
     
     % x*sin(x)
-    f_nodes = nodes.*sin(nodes);
+    f_nodes = nodes .* exp(-nodes);
     
     % sen(x)-xcos(x) + c 
     realIntegral(n/2) = (sin(nodes(end)) - nodes(end)*cos(nodes(end))) - ...
