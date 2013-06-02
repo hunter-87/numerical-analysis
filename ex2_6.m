@@ -5,12 +5,15 @@
 % b: n
 
 
-A = [ 1 2 3; 0 1 2; 0 0 1; 5 6 7; 8 9 2];
+A = [ 1 2 3; 0 1 2; 0 0 1]%; 5 6 7; 8 9 2];
 
 % def b
-b = [1;2;3;4;5];
-% 
- [Q, R] = get_qr_decomposition(A);
+b = [1;2;3]%;4;5];
+
+% our implementation 
+[Q, R] = get_qr_decomposition(A);
+
+
 % 
 % col = size(R,2)
 % % column vector [c1;c2]

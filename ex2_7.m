@@ -16,7 +16,7 @@ n = 3;
 if ( n <=m )
 
     % filter the vander matrix
-    A = vander(x);
+    A = vander(x)
     A = A(:,end-n:end)
     % pol di migliore approx ai min quad grado n<=m
     
